@@ -11,6 +11,9 @@ importers:
       vue:
         specifier: ^3.5.30
         version: 3.5.31(typescript@5.9.3)
+      vue-router:
+        specifier: '4'
+        version: 4.6.4(vue@3.5.31(typescript@5.9.3))
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.2.2
@@ -640,6 +643,9 @@ packages:
   '@vue/compiler-ssr@3.5.31':
     resolution: {integrity: sha512-h0xIMxrt/LHOvJKMri+vdYT92BrK3HFLtDqq9Pr/lVVfE4IyKZKvWf0vJFW10Yr6nX02OR4MkJwI0c1HDa1hog==}
 
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+
   '@vue/devtools-core@8.1.1':
     resolution: {integrity: sha512-bCCsSABp1/ot4j8xJEycM6Mtt2wbuucfByr6hMgjbYhrtlscOJypZKvy8f1FyWLYrLTchB5Qz216Lm92wfbq0A==}
     peerDependencies:
@@ -1142,6 +1148,11 @@ packages:
 
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
+
+  vue-router@4.6.4:
+    resolution: {integrity: sha512-Hz9q5sa33Yhduglwz6g9skT8OBPii+4bFn88w6J+J4MfEo4KRRpmiNG/hHHkdbRFlLBOqxN8y8gf2Fb0MTUgVg==}
+    peerDependencies:
+      vue: ^3.5.0
 
   vue-tsc@3.2.6:
     resolution: {integrity: sha512-gYW/kWI0XrwGzd0PKc7tVB/qpdeAkIZLNZb10/InizkQjHjnT8weZ/vBarZoj4kHKbUTZT/bAVgoOr8x4NsQ/Q==}
@@ -1696,6 +1707,8 @@ snapshots:
       '@vue/compiler-dom': 3.5.31
       '@vue/shared': 3.5.31
 
+  '@vue/devtools-api@6.6.4': {}
+
   '@vue/devtools-core@8.1.1(vue@3.5.31(typescript@5.9.3))':
     dependencies:
       '@vue/devtools-kit': 8.1.1
@@ -2157,6 +2170,11 @@ snapshots:
       lightningcss: 1.32.0
 
   vscode-uri@3.1.0: {}
+
+  vue-router@4.6.4(vue@3.5.31(typescript@5.9.3)):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.31(typescript@5.9.3)
 
   vue-tsc@3.2.6(typescript@5.9.3):
     dependencies:
