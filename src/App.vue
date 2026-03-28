@@ -1,13 +1,16 @@
 <template>
   <div class="app-shell">
-    <AppSidebar />
+    <div class="sidebar-wrapper">
+      <AppSidebar />
+    </div>
     <div class="app-main">
       <AppTopbar />
       <section class="content">
         <RouterView />
       </section>
     </div>
-  </div></template>
+  </div>
+</template>
 
 <script setup lang="ts">
 import { RouterView } from "vue-router";
@@ -19,6 +22,11 @@ import AppTopbar from "./components/layout/AppTopbar.vue";
 .app-shell {
   display: flex;
   min-height: 100vh;
+}
+
+.sidebar-wrapper {
+  width: 256px;
+  flex-shrink: 0;
 }
 
 .app-main {
