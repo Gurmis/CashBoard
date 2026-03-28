@@ -10,6 +10,7 @@
   </div></template>
 
 <script setup lang="ts">
+import { RouterView } from "vue-router";
 import AppSidebar from "./components/layout/AppSidebar.vue";
 import AppTopbar from "./components/layout/AppTopbar.vue";
 </script>
