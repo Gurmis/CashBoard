@@ -3,8 +3,8 @@
     <div class="topbar__title">Dashboard</div>
 
     <div class="topbar__actions">
-      <button class="topbar__theme-button" type="button">
-        Theme
+      <button class="topbar__theme-button" type="button" @click="isDark = !isDark">
+        {{ isDark ? 'Light' : 'Dark'}}
       </button>
 
       <div class="topbar__avatar">PG</div>
@@ -13,6 +13,14 @@
 </template>
 
 <script setup lang="ts">
+import {ref, watch} from "vue";
+
+const isDark = ref(false);
+
+watch(isDark, (value) => {
+  document.documentElement.classList.toggle('dark', value);
+  localStorage.setItem('theme', value ? 'dark' : 'light');
+})
 </script>
 
 <style lang="scss" scoped>
