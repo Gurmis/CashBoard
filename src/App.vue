@@ -22,6 +22,7 @@ import AppTopbar from "./components/layout/AppTopbar.vue";
 .app-shell {
   display: flex;
   min-height: 100vh;
+  background: var(--color-bg);
 }
 
 .sidebar-wrapper {

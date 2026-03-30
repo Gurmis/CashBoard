@@ -84,7 +84,7 @@
     --color-sidebar-bg: var(--slate-900);
     --color-sidebar-border: var(--slate-700);
     --color-sidebar-text: var(--slate-300);
-    --color-sidebar-text-active: var(--white);
+    --color-sidebar-text-active: var(--slate-900);
     --color-sidebar-item-hover: var(--slate-700);
     --color-sidebar-item-active: var(--purple-100);
 
