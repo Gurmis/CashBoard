@@ -32,7 +32,7 @@
 .sidebar__brand {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--color-sidebar-text);
+  color: var(--color-sidebar-brand);
   margin-bottom: 32px;
 }
 

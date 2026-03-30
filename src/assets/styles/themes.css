@@ -31,6 +31,7 @@
     --color-sidebar-border: var(--slate-200);
     --color-sidebar-text: var(--slate-700);
     --color-sidebar-text-active: var(--slate-900);
+    --color-sidebar-brand: var(--slate-900);
     --color-sidebar-item-hover: var(--slate-100);
     --color-sidebar-item-active: var(--blue-100);
 
@@ -84,9 +85,11 @@
     --color-sidebar-bg: var(--slate-900);
     --color-sidebar-border: var(--slate-700);
     --color-sidebar-text: var(--slate-300);
-    --color-sidebar-text-active: var(--slate-900);
+    --color-sidebar-text-active: var(--white);
+    --color-sidebar-brand: var(--white);
     --color-sidebar-item-hover: var(--slate-700);
-    --color-sidebar-item-active: var(--purple-100);
+    --color-sidebar-item-active: var(--color-slate-700);
+
 
     --color-topbar-bg: rgba(15, 23, 42, 0.72);
     --color-topbar-border: var(--slate-700);

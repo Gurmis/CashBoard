@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 
 const isDark = ref(false);
 
@@ -21,6 +21,11 @@ watch(isDark, (value) => {
   document.documentElement.classList.toggle('dark', value);
   localStorage.setItem('theme', value ? 'dark' : 'light');
 })
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem("theme");
+  isDark.value = savedTheme === "dark";
+});
 </script>
 
 <style lang="scss" scoped>
