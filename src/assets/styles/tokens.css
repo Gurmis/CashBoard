@@ -11,7 +11,10 @@
     --slate-400: #94a3b8;
     --slate-500: #64748b;
     --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-850: #172033;
     --slate-900: #0f172a;
+    --slate-950: #0b1220;
 
     /* blue */
     --blue-100: #dbeafe;
@@ -39,7 +42,7 @@
     --red-500: #ef4444;
     --red-600: #dc2626;
 
-    /* white / black helpers */
+    /* white / black */
     --white: #ffffff;
     --black: #000000;
 
@@ -54,6 +57,7 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 20px;
+    --radius-pill: 999px;
 
     --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
     --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
