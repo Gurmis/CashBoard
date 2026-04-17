@@ -22,11 +22,21 @@
     --blue-600: #2563eb;
     --blue-700: #1d4ed8;
 
+    /* indigo */
+    --indigo-200: #c4b5fd;
+    --indigo-300: #a5b4fc;
+
     /* purple */
     --purple-100: #ede9fe;
+    --purple-200: #e9d5ff;
+    --purple-300: #d8b4fe;
+    --purple-400: #c084fc;
     --purple-500: #8b5cf6;
     --purple-600: #7c3aed;
+    --purple-650: #9333ea;
     --purple-700: #6d28d9;
+    --purple-750: #7e22ce;
+    --purple-800: #4c1d95;
 
     /* green */
     --green-100: #dcfce7;
@@ -46,6 +56,81 @@
     --white: #ffffff;
     --black: #000000;
 
+    /* custom raw surface */
+    --navy-700: #243247;
+
+    /* =========================
+       RAW ALPHA TOKENS
+       ========================= */
+
+    /* white alpha */
+    --white-a-03: rgba(255, 255, 255, 0.03);
+    --white-a-06: rgba(255, 255, 255, 0.06);
+    --white-a-42: rgba(255, 255, 255, 0.42);
+    --white-a-50: rgba(255, 255, 255, 0.50);
+    --white-a-72: rgba(255, 255, 255, 0.72);
+    --white-a-80: rgba(255, 255, 255, 0.80);
+
+    /* black alpha */
+    --black-a-24: rgba(0, 0, 0, 0.24);
+    --black-a-30: rgba(0, 0, 0, 0.30);
+    --black-a-38: rgba(0, 0, 0, 0.38);
+
+    /* slate-400 alpha */
+    --slate-400-a-06: rgba(148, 163, 184, 0.06);
+    --slate-400-a-08: rgba(148, 163, 184, 0.08);
+    --slate-400-a-10: rgba(148, 163, 184, 0.10);
+    --slate-400-a-12: rgba(148, 163, 184, 0.12);
+    --slate-400-a-14: rgba(148, 163, 184, 0.14);
+    --slate-400-a-18: rgba(148, 163, 184, 0.18);
+
+    /* slate-900 alpha */
+    --slate-900-a-72: rgba(15, 23, 42, 0.72);
+
+    /* purple alpha */
+    --purple-200-a-52: rgba(233, 213, 255, 0.52);
+    --purple-300-a-38: rgba(216, 180, 254, 0.38);
+    --purple-300-a-72: rgba(216, 180, 254, 0.72);
+    --purple-400-a-48: rgba(192, 132, 252, 0.48);
+
+    --purple-500-a-10: rgba(139, 92, 246, 0.10);
+    --purple-500-a-14: rgba(139, 92, 246, 0.14);
+    --purple-500-a-16: rgba(139, 92, 246, 0.16);
+    --purple-500-a-18: rgba(139, 92, 246, 0.18);
+    --purple-500-a-20: rgba(139, 92, 246, 0.20);
+
+    --purple-650-a-10: rgba(147, 51, 234, 0.10);
+    --purple-750-a-14: rgba(126, 34, 206, 0.14);
+    --purple-800-a-16: rgba(76, 29, 149, 0.16);
+
+    /* status alpha */
+    --green-500-a-18: rgba(34, 197, 94, 0.18);
+    --amber-500-a-18: rgba(245, 158, 11, 0.18);
+    --red-500-a-18: rgba(239, 68, 68, 0.18);
+
+    /* =========================
+       RAW SHADOW TOKENS
+       ========================= */
+
+    /* neutral shadows - light */
+    --shadow-slate-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-slate-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --shadow-slate-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+
+    /* neutral shadows - dark */
+    --shadow-black-sm: 0 1px 2px var(--black-a-24);
+    --shadow-black-md: 0 8px 24px var(--black-a-30);
+    --shadow-black-lg: 0 18px 48px var(--black-a-38);
+
+    /* purple shadows */
+    --shadow-purple-sm: 0 10px 28px var(--purple-650-a-10);
+    --shadow-purple-md: 0 14px 34px var(--purple-750-a-14);
+    --shadow-purple-lg: 0 8px 24px var(--purple-800-a-16);
+
+    /* inset highlights */
+    --shadow-inset-white-42: 0 1px 1px var(--white-a-42) inset;
+    --shadow-inset-white-50: 0 1px 1px var(--white-a-50) inset;
+
     /* =========================
        TYPOGRAPHY / SHAPE / FX
        ========================= */
@@ -59,9 +144,10 @@
     --radius-xl: 20px;
     --radius-pill: 999px;
 
-    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
-    --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+    /* foundation semantic defaults */
+    --shadow-sm: var(--shadow-slate-sm);
+    --shadow-md: var(--shadow-slate-md);
+    --shadow-lg: var(--shadow-slate-lg);
 
     --transition-fast: 160ms ease;
     --transition-base: 220ms ease;

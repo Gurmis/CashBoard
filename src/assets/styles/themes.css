@@ -33,17 +33,17 @@
     /* nav items */
     --nav-item-color: var(--slate-700);
 
-    --nav-item-hover-bg: rgba(233, 213, 255, 0.52);
-    --nav-item-hover-border: rgba(216, 180, 254, 0.38);
+    --nav-item-hover-bg: var(--purple-200-a-52);
+    --nav-item-hover-border: var(--purple-300-a-38);
     --nav-item-hover-shadow:
-            0 10px 28px rgba(147, 51, 234, 0.10),
-            0 1px 1px rgba(255, 255, 255, 0.42) inset;
+            var(--shadow-purple-sm),
+            var(--shadow-inset-white-42);
 
-    --nav-item-active-bg: rgba(216, 180, 254, 0.72);
-    --nav-item-active-border: rgba(192, 132, 252, 0.48);
+    --nav-item-active-bg: var(--purple-300-a-72);
+    --nav-item-active-border: var(--purple-400-a-48);
     --nav-item-active-shadow:
-            0 14px 34px rgba(126, 34, 206, 0.14),
-            0 1px 1px rgba(255, 255, 255, 0.5) inset;
+            var(--shadow-purple-md),
+            var(--shadow-inset-white-50);
 
     --nav-item-active-color: var(--slate-900);
 
@@ -85,7 +85,7 @@
     --icon-button-hover-color: var(--slate-900);
 
     /* topbar */
-    --topbar-bg: rgba(255, 255, 255, 0.8);
+    --topbar-bg: var(--white-a-80);
     --topbar-border: var(--slate-200);
 
     /* status */
@@ -103,6 +103,11 @@
     --chart-3: var(--green-600);
     --chart-4: var(--amber-500);
     --chart-5: var(--red-500);
+
+    /* semantic shadows */
+    --shadow-sm: var(--shadow-slate-sm);
+    --shadow-md: var(--shadow-slate-md);
+    --shadow-lg: var(--shadow-slate-lg);
 }
 
 .dark {
@@ -124,31 +129,30 @@
     --text-on-accent: var(--white);
 
     /* borders */
-    --border-subtle: rgba(148, 163, 184, 0.06);
-    --border-default: rgba(148, 163, 184, 0.10);
-    --border-strong: rgba(148, 163, 184, 0.18);
+    --border-subtle: var(--slate-400-a-06);
+    --border-default: var(--slate-400-a-10);
+    --border-strong: var(--slate-400-a-18);
 
     /* accent / brand */
     --accent-primary: var(--purple-500);
     --accent-primary-hover: var(--purple-600);
-    --accent-soft: rgba(139, 92, 246, 0.18);
+    --accent-soft: var(--purple-500-a-18);
 
     /* links */
-    --link-color: #a5b4fc;
-    --link-hover-color: #c4b5fd;
+    --link-color: var(--indigo-300);
+    --link-hover-color: var(--indigo-200);
 
     /* nav items */
     --nav-item-color: var(--slate-300);
     --nav-item-active-color: var(--white);
 
-    --nav-item-hover-bg: rgba(139, 92, 246, 0.10);
-    --nav-item-hover-border: rgba(139, 92, 246, 0.14);
+    --nav-item-hover-bg: var(--purple-500-a-10);
+    --nav-item-hover-border: var(--purple-500-a-14);
     --nav-item-hover-shadow: none;
 
-    --nav-item-active-bg: rgba(139, 92, 246, 0.16);
-    --nav-item-active-border: rgba(139, 92, 246, 0.20);
-    --nav-item-active-shadow:
-            0 8px 24px rgba(76, 29, 149, 0.16);
+    --nav-item-active-bg: var(--purple-500-a-16);
+    --nav-item-active-border: var(--purple-500-a-20);
+    --nav-item-active-shadow: var(--shadow-purple-lg);
 
     /* buttons */
     --button-primary-bg: var(--purple-500);
@@ -159,51 +163,51 @@
     --button-primary-hover-border: var(--purple-600);
     --button-primary-hover-color: var(--white);
 
-    --button-secondary-bg: rgba(255, 255, 255, 0.03);
-    --button-secondary-border: rgba(148, 163, 184, 0.12);
+    --button-secondary-bg: var(--white-a-03);
+    --button-secondary-border: var(--slate-400-a-12);
     --button-secondary-color: var(--white);
 
-    --button-secondary-hover-bg: rgba(255, 255, 255, 0.06);
-    --button-secondary-hover-border: rgba(148, 163, 184, 0.18);
+    --button-secondary-hover-bg: var(--white-a-06);
+    --button-secondary-hover-border: var(--slate-400-a-18);
     --button-secondary-hover-color: var(--white);
 
     /* inputs */
-    --input-bg: rgba(255, 255, 255, 0.03);
-    --input-border: rgba(148, 163, 184, 0.12);
+    --input-bg: var(--white-a-03);
+    --input-border: var(--slate-400-a-12);
     --input-border-focus: var(--purple-500);
     --input-placeholder: var(--slate-500);
 
     /* cards */
     --card-bg: var(--slate-800);
-    --card-border: rgba(148, 163, 184, 0.08);
+    --card-border: var(--slate-400-a-08);
     --card-shadow: var(--shadow-sm);
 
-    --card-hover-bg: #243247;
-    --card-hover-border: rgba(148, 163, 184, 0.14);
+    --card-hover-bg: var(--navy-700);
+    --card-hover-border: var(--slate-400-a-14);
     --card-hover-shadow: var(--shadow-md);
 
     /* icon buttons */
-    --icon-button-bg: rgba(255, 255, 255, 0.03);
-    --icon-button-border: rgba(148, 163, 184, 0.12);
+    --icon-button-bg: var(--white-a-03);
+    --icon-button-border: var(--slate-400-a-12);
     --icon-button-color: var(--slate-300);
 
-    --icon-button-hover-bg: rgba(255, 255, 255, 0.06);
-    --icon-button-hover-border: rgba(148, 163, 184, 0.18);
+    --icon-button-hover-bg: var(--white-a-06);
+    --icon-button-hover-border: var(--slate-400-a-18);
     --icon-button-hover-color: var(--white);
 
     /* topbar */
-    --topbar-bg: rgba(15, 23, 42, 0.72);
-    --topbar-border: rgba(148, 163, 184, 0.06);
+    --topbar-bg: var(--slate-900-a-72);
+    --topbar-border: var(--slate-400-a-06);
 
     /* status */
     --status-success: var(--green-500);
-    --status-success-soft: rgba(34, 197, 94, 0.18);
+    --status-success-soft: var(--green-500-a-18);
 
     --status-warning: var(--amber-500);
-    --status-warning-soft: rgba(245, 158, 11, 0.18);
+    --status-warning-soft: var(--amber-500-a-18);
 
     --status-danger: var(--red-500);
-    --status-danger-soft: rgba(239, 68, 68, 0.18);
+    --status-danger-soft: var(--red-500-a-18);
 
     --status-info: var(--blue-500);
 
@@ -214,8 +218,8 @@
     --chart-4: var(--amber-500);
     --chart-5: var(--red-500);
 
-    /* shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.30);
-    --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.38);
+    /* semantic shadows */
+    --shadow-sm: var(--shadow-black-sm);
+    --shadow-md: var(--shadow-black-md);
+    --shadow-lg: var(--shadow-black-lg);
 }
