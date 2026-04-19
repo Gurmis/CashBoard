@@ -23,8 +23,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--surface-page);
+  color: var(--text-primary);
   transition:
           background-color var(--transition-base),
           color var(--transition-base);
@@ -53,44 +53,45 @@ svg {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 ::selection {
-  background: var(--color-primary-soft);
+  background: var(--accent-soft);
+  color: var(--text-primary);
 }
 
 .app-page-title {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .app-page-subtitle {
   margin: 0;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
 .surface {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--surface-page);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
 }
 
 .text-muted {
-  color: var(--color-text-muted);
+  color: var(--text-muted);
 }
 
 .status-positive {
-  color: var(--color-success);
+  color: var(--status-success);
 }
 
 .status-negative {
-  color: var(--color-danger);
+  color: var(--status-danger);
 }
 
 .text-link {
@@ -112,7 +113,7 @@ svg {
   font-weight: 500;
   text-decoration: none;
   transition:
-          color var(--transition-fast),
+          color var(--transition-fast)
 }
 
 .nav-item:hover {

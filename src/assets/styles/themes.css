@@ -48,8 +48,8 @@
     --nav-item-active-color: var(--slate-900);
 
     /* buttons */
-    --button-primary-bg: var(--purple-500);
-    --button-primary-border: var(--purple-500);
+    --button-primary-bg: var(--purple-400);
+    --button-primary-border: var(--purple-700);
     --button-primary-color: var(--white);
     --button-primary-hover-bg: var(--purple-600);
     --button-primary-hover-border: var(--purple-600);
@@ -108,6 +108,9 @@
     --shadow-sm: var(--shadow-slate-sm);
     --shadow-md: var(--shadow-slate-md);
     --shadow-lg: var(--shadow-slate-lg);
+
+    /* focus */
+    --focus-ring: var(--accent-primary);
 }
 
 .dark {
@@ -222,4 +225,6 @@
     --shadow-sm: var(--shadow-black-sm);
     --shadow-md: var(--shadow-black-md);
     --shadow-lg: var(--shadow-black-lg);
-}
+
+    /* focus */
+    --focus-ring: var(--accent-primary);}
