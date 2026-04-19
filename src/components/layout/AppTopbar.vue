@@ -31,8 +31,8 @@ onMounted(() => {
 <style lang="scss" scoped>
 .topbar {
   height: 64px;
-  background: var(--color-topbar-bg);
-  border-bottom: 1px solid var(--color-topbar-border);
+  background: var(--surface-panel);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,7 +46,7 @@ onMounted(() => {
 .topbar__title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .topbar__actions {
@@ -58,10 +58,10 @@ onMounted(() => {
 .topbar__theme-button {
   min-height: 36px;
   padding: 0 12px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: var(--surface-panel);
+  color: var(--text-primary);
   font-weight: 500;
   transition:
       background-color var(--transition-fast),
@@ -69,15 +69,15 @@ onMounted(() => {
 }
 
 .topbar__theme-button:hover {
-  background: var(--color-surface-muted);
+  background: var(--surface-card-muted);
 }
 
 .topbar__avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--color-primary-soft);
-  color: var(--color-primary);
+  background: var(--accent-soft);
+  color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
