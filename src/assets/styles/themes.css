@@ -49,10 +49,10 @@
 
     /* buttons */
     --button-primary-bg: var(--purple-400);
-    --button-primary-border: var(--purple-700);
+    --button-primary-border: var(--purple-600);
     --button-primary-color: var(--white);
-    --button-primary-hover-bg: var(--purple-600);
-    --button-primary-hover-border: var(--purple-600);
+    --button-primary-hover-bg: var(--purple-500);
+    --button-primary-hover-border: var(--purple-500);
     --button-primary-hover-color: var(--white);
 
     --button-secondary-bg: var(--white);
