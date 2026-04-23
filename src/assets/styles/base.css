@@ -79,7 +79,7 @@ svg {
   background: var(--surface-page);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .text-muted {
