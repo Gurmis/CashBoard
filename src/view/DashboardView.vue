@@ -11,9 +11,9 @@
       </div>
     </div>
     <div class="dashboard-stats">
-      <div class="dashboard-stats__card surface" style="background: #3b82f6">Card 1</div>
-      <div class="dashboard-stats__card surface" style="background: #8b5cf6">Card 2</div>
-      <div class="dashboard-stats__card surface" style="background: #7c3aed">Card 3</div>
+      <div class="dashboard-stats__card surface">Card 1</div>
+      <div class="dashboard-stats__card surface">Card 2</div>
+      <div class="dashboard-stats__card surface">Card 3</div>
     </div>
     <div class="dashboard-content">
       <div class="dashboard-content__main-panel surface">Main Panel</div>
@@ -92,8 +92,8 @@
   align-items: center;
   gap: 12px;
   padding: 24px;
-  min-height: 100px;
-  border-radius: var(--radius-lg);
+  min-height: 80px;
+  background: var(--card-bg);
   color: var(--text-primary);
 }
 
@@ -106,6 +106,8 @@
   flex: 3;
   min-height: 400px;
   padding: 24px;
+  //background: var(--card-bg);
+
 }
 .dashboard-content__side-panel {
   flex: 1;
