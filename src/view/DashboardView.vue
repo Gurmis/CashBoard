@@ -11,9 +11,18 @@
       </div>
     </div>
     <div class="dashboard-stats">
-      <div class="dashboard-stats__card surface">Card 1</div>
-      <div class="dashboard-stats__card surface">Card 2</div>
-      <div class="dashboard-stats__card surface">Card 3</div>
+      <div class="stat-card surface">
+        <div class="stat-card__icon">Icon</div>
+        <div class="stat-card__content">
+          <div class="stat-card__label">Total Balance</div>
+          <div class="stat-card__summary">
+            <div class="stat-card__value">$18,300.45</div>
+            <div class="stat-card__trend">^8%</div>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card surface">Card 2</div>
+      <div class="stat-card surface">Card 3</div>
     </div>
     <div class="dashboard-content">
       <div class="dashboard-content__main-panel surface">Main Panel</div>
@@ -26,7 +35,6 @@
 </script>
 
 <style lang="scss" scoped>
-
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -85,9 +93,9 @@
   gap: 24px;
 }
 
-.dashboard-stats__card {
+.stat-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 12px;
@@ -96,6 +104,20 @@
   background: var(--card-bg);
   color: var(--text-primary);
 }
+
+.stats-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stats-card__summary {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+}
+
 
 .dashboard-content {
   display: flex;
