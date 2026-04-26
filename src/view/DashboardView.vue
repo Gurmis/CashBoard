@@ -11,20 +11,41 @@
       </div>
     </div>
     <div class="dashboard-stats">
-      <div class="stat-card surface">
-        <div class="stat-card__icon">Icon</div>
+      <div class="stat-card stat-card--blue surface">
+        <div class="stat-card__icon">💰</div>
 
         <div class="stat-card__content">
           <div class="stat-card__label">Total Balance</div>
-
           <div class="stat-card__summary">
             <div class="stat-card__value">$18,300.45</div>
-            <div class="stat-card__trend">^8%</div>
+            <div class="stat-card__trend stat-card__trend--positive">+8%</div>
           </div>
         </div>
       </div>
-      <div class="stat-card surface">Card 2</div>
-      <div class="stat-card surface">Card 3</div>
+
+      <div class="stat-card stat-card--purple surface">
+        <div class="stat-card__icon">💳</div>
+
+        <div class="stat-card__content">
+          <div class="stat-card__label">Available Balance</div>
+          <div class="stat-card__summary">
+            <div class="stat-card__value">$6,240.00</div>
+            <div class="stat-card__trend stat-card__trend--negative">-3%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card surface stat-card--indigo">
+        <div class="stat-card__icon">🏦</div>
+
+        <div class="stat-card__content">
+          <div class="stat-card__label">Savings</div>
+          <div class="stat-card__summary">
+            <div class="stat-card__value">$12,060.45</div>
+            <div class="stat-card__trend stat-card__trend--positive">+12%</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="dashboard-content">
       <div class="dashboard-content__main-panel surface">Main Panel</div>
@@ -111,8 +132,30 @@
   gap: 12px;
   padding: 16px;
   min-height: 100px;
-  background: var(--card-bg);
+  background: var(--stat-card-bg);
+  border: 1px solid var(--stat-card-border);
   color: var(--text-primary);
+}
+
+.stat-card--purple {
+  --stat-card-bg: var(--metric-purple-bg);
+  --stat-card-border: var(--metric-purple-border);
+  --stat-card-icon-bg: var(--metric-purple-icon-bg);
+  --stat-card-icon-color: var(--metric-purple-icon-color);
+}
+
+.stat-card--blue {
+  --stat-card-bg: var(--metric-blue-bg);
+  --stat-card-border: var(--metric-blue-border);
+  --stat-card-icon-bg: var(--metric-blue-icon-bg);
+  --stat-card-icon-color: var(--metric-blue-icon-color);
+}
+
+.stat-card--indigo {
+  --stat-card-bg: var(--metric-indigo-bg);
+  --stat-card-border: var(--metric-indigo-border);
+  --stat-card-icon-bg: var(--metric-indigo-icon-bg);
+  --stat-card-icon-color: var(--metric-indigo-icon-color);
 }
 
 .stat-card__icon {
@@ -126,8 +169,23 @@
 
   border-radius: var(--radius-lg);
 
+  background: var(--stat-card-icon-bg);
+  color: var(--stat-card-icon-color);
+}
+
+.stat-card__icon--balance {
   background: var(--accent-soft);
   color: var(--accent-primary);
+}
+
+.stat-card__icon--available {
+  background: var(--status-success-soft);
+  color: var(--status-success);
+}
+
+.stat-card__icon--savings {
+  background: var(--status-warning-soft);
+  color: var(--status-warning);
 }
 
 .stat-card__content {
@@ -158,7 +216,15 @@
 
 .stat-card__trend {
   font-size: 0.9rem;
+  color: var(--stat-card-trend-color);
+}
+
+.stat-card__trend--positive {
   color: var(--status-success);
+}
+
+.stat-card__trend--negative {
+  color: var(--status-danger);
 }
 
 .dashboard-content {

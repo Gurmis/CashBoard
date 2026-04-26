@@ -76,6 +76,22 @@
     --card-hover-border: var(--slate-300);
     --card-hover-shadow: var(--shadow-md);
 
+    /* metric cards */
+    --metric-purple-bg: var(--purple-100-a-72);
+    --metric-purple-border: var(--purple-300-a-38);
+    --metric-purple-icon-bg: var(--purple-200-a-72);
+    --metric-purple-icon-color: var(--purple-700);
+
+    --metric-blue-bg: var(--blue-100-a-72);
+    --metric-blue-border: var(--blue-300-a-38);
+    --metric-blue-icon-bg: var(--blue-200-a-72);
+    --metric-blue-icon-color: var(--blue-700);
+
+    --metric-indigo-bg: var(--indigo-100-a-72);
+    --metric-indigo-border: var(--indigo-300-a-38);
+    --metric-indigo-icon-bg: var(--indigo-200-a-72);
+    --metric-indigo-icon-color: var(--indigo-700);
+
     /* icon buttons */
     --icon-button-bg: var(--white);
     --icon-button-border: var(--slate-300);
@@ -188,6 +204,22 @@
     --card-hover-bg: var(--navy-700);
     --card-hover-border: var(--slate-400-a-14);
     --card-hover-shadow: var(--shadow-md);
+
+    /* metric cards */
+    --metric-purple-bg: var(--purple-500-a-18);
+    --metric-purple-border: var(--purple-500-a-20);
+    --metric-purple-icon-bg: var(--purple-500-a-18);
+    --metric-purple-icon-color: var(--purple-300);
+
+    --metric-blue-bg: var(--blue-500-a-18);
+    --metric-blue-border: var(--blue-500-a-20);
+    --metric-blue-icon-bg: var(--blue-500-a-18);
+    --metric-blue-icon-color: var(--blue-300);
+
+    --metric-indigo-bg: var(--indigo-500-a-18);
+    --metric-indigo-border: var(--indigo-500-a-20);
+    --metric-indigo-icon-bg: var(--indigo-500-a-18);
+    --metric-indigo-icon-color: var(--indigo-300);
 
     /* icon buttons */
     --icon-button-bg: var(--white-a-03);
