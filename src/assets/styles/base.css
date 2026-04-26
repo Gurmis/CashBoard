@@ -78,7 +78,7 @@ svg {
 .surface {
   background: var(--surface-page);
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-md);
 }
 
@@ -109,7 +109,7 @@ svg {
   align-items: center;
   color: var(--nav-item-color);
   /*border: 1px solid transparent;*/
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xl);
   font-weight: 500;
   text-decoration: none;
   transition:
