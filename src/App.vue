@@ -6,7 +6,9 @@
     <div class="app-main">
       <AppTopbar />
       <section class="content">
-        <RouterView />
+        <div class="content-inner">
+          <RouterView />
+        </div>
       </section>
     </div>
   </div>
@@ -31,8 +33,8 @@ import AppTopbar from "./components/layout/AppTopbar.vue";
 }
 
 .app-main {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 
@@ -40,5 +42,11 @@ import AppTopbar from "./components/layout/AppTopbar.vue";
   flex: 1;
   overflow: auto;
   padding: 16px 24px;
+}
+
+.content-inner {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
 }
 </style>

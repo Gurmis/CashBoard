@@ -43,8 +43,8 @@
 }
 
 .sidebar__link {
-  min-height: 40px;
-  padding: 0 12px;
+  min-height: 44px;
+  padding: 8px 12px;
 }
 
 .sidebar__link:hover {
