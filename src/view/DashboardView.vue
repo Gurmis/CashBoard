@@ -7,14 +7,16 @@
         </div>
       </div>
       <div class="dashboard-toolbar__right">
-        <button class="dashboard-toolbar__action">Add Transaction</button>
+        <button class="dashboard-toolbar__action">+ Add Transaction</button>
       </div>
     </div>
     <div class="dashboard-stats">
       <div class="stat-card surface">
         <div class="stat-card__icon">Icon</div>
+
         <div class="stat-card__content">
           <div class="stat-card__label">Total Balance</div>
+
           <div class="stat-card__summary">
             <div class="stat-card__value">$18,300.45</div>
             <div class="stat-card__trend">^8%</div>
@@ -67,7 +69,7 @@
 .dashboard-toolbar__action {
   min-height: 44px;
   padding: 0 20px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   border: 1px solid var(--button-primary-border);
   background: var(--button-primary-bg);
   color: var(--button-primary-color);
@@ -89,35 +91,75 @@
 
 .dashboard-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
+
+  @media (max-width: 1195px) {
+    grid-template-columns: repeat(2, minmax(250px, 320px));
+    justify-content: start;
+  }
+
+  @media (max-width: 830px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .stat-card {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 24px;
-  min-height: 80px;
+  padding: 16px;
+  min-height: 100px;
   background: var(--card-bg);
   color: var(--text-primary);
 }
 
-.stats-card__content {
+.stat-card__icon {
+  width: 38px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--accent-soft);
+  color: var(--accent-primary);
+}
+
+.stat-card__content {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
 }
 
-.stats-card__summary {
+.stat-card__label {
+  font-size: 0.975rem;
+  color: var(--text-muted);
+}
+
+
+.stat-card__summary {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   gap: 8px;
 }
 
+.stat-card__value {
+  font-size: 1.525rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.stat-card__trend {
+  font-size: 0.9rem;
+  color: var(--status-success);
+}
 
 .dashboard-content {
   display: flex;
@@ -127,14 +169,14 @@
 .dashboard-content__main-panel {
   flex: 3;
   min-height: 400px;
-  padding: 24px;
+  padding: 16px;
   //background: var(--card-bg);
 
 }
 .dashboard-content__side-panel {
   flex: 1;
   min-height: 400px;
-  padding: 24px;
+  padding: 16px;
 }
 
 </style>
