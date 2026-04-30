@@ -12,7 +12,9 @@
     </div>
     <div class="dashboard-stats">
       <div class="stat-card stat-card--blue surface">
-        <div class="stat-card__icon">💰</div>
+        <div class="stat-card__icon">
+          <Icon icon="lucide:euro" />
+        </div>
 
         <div class="stat-card__content">
           <div class="stat-card__label">Total Balance</div>
@@ -24,7 +26,9 @@
       </div>
 
       <div class="stat-card stat-card--purple surface">
-        <div class="stat-card__icon">💳</div>
+        <div class="stat-card__icon">
+          <Icon icon="lucide:wallet" />
+        </div>
 
         <div class="stat-card__content">
           <div class="stat-card__label">Available Balance</div>
@@ -36,7 +40,9 @@
       </div>
 
       <div class="stat-card surface stat-card--indigo">
-        <div class="stat-card__icon">🏦</div>
+        <div class="stat-card__icon">
+          <Icon icon="lucide:piggy-bank" />
+        </div>
 
         <div class="stat-card__content">
           <div class="stat-card__label">Savings</div>
@@ -55,6 +61,8 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
+
 </script>
 
 <style lang="scss" scoped>
