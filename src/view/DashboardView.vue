@@ -54,7 +54,70 @@
       </div>
     </div>
     <div class="dashboard-content">
-      <div class="dashboard-content__main-panel surface">Main Panel</div>
+      <div class="dashboard-content__main-panel">
+        <div class="main-panel__header">
+            <h3 class="text-2xl font-medium">Recent Transactions</h3>
+        </div>
+        <div class="main-panel__body surface">
+          <div class="table-wrapper">
+            <table class="transactions-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connor McDavid</td>
+                  <td>Income</td>
+                  <td>7 April 2026</td>
+                  <td>-$2000</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td>Connor McDavid</td>
+                  <td>Expense</td>
+                  <td>7 April 2026</td>
+                  <td>-$2000</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td>Austin Mathews</td>
+                  <td>Income</td>
+                  <td>7 May 2026</td>
+                  <td>+$400</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td>Leon Draisaitl</td>
+                  <td>Income</td>
+                  <td>7 January 2026</td>
+                  <td>+$2000</td>
+                  <td>...</td>
+                </tr>
+              <tr>
+                <td>Juraj Slafkovsky</td>
+                <td>Income</td>
+                <td>7 February 2026</td>
+                <td>+$2000</td>
+                <td>...</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="5" class="table-footer-cell text-right">
+                  <button class="table-footer-action">View All →</button>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
       <div class="dashboard-content__side-panel surface">Side Panel</div>
     </div>
   </div>
@@ -237,20 +300,70 @@ import { Icon } from "@iconify/vue";
 
 .dashboard-content {
   display: flex;
-  gap: 24px;
+  margin-top: 16px;
+  gap: 32px;
 }
 
 .dashboard-content__main-panel {
+  display: flex;
+  flex-direction: column;
   flex: 3;
-  min-height: 400px;
-  padding: 16px;
+  align-self: flex-start;
+  //min-height: 200px;
   //background: var(--card-bg);
-
 }
+
+.main-panel__header {
+  margin-bottom: 16px;
+}
+
+.main-panel__body {
+  flex: 1;
+  min-width: 0;
+}
+
 .dashboard-content__side-panel {
   flex: 1;
-  min-height: 400px;
+  align-self: flex-start;
+  min-height: 320px;
   padding: 16px;
 }
 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 14px 12px;
+  white-space: nowrap;
+}
+
+.transactions-table th {
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.transactions-table td {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.transactions-table tfoot tr td {
+  border-bottom: none;
+}
+
+.text-right {
+  text-align: right;
+}
 </style>
