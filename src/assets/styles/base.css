@@ -30,6 +30,48 @@ body {
           color var(--transition-base);
 }
 
+@layer base {
+
+  /* 🔹 Headings */
+  h1 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg font-medium;
+  }
+
+  h5 {
+    @apply text-base font-medium;
+  }
+
+  h6 {
+    @apply text-sm font-medium text-gray-500;
+  }
+
+  /* 🔹 Text */
+  p {
+    @apply mb-4;
+  }
+
+  small {
+    @apply text-sm text-gray-500;
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+}
+
+
 a {
   color: inherit;
   text-decoration: none;
