@@ -280,7 +280,7 @@ import { Icon } from "@iconify/vue";
 }
 
 .stat-card__value {
-  font-size: 1.525rem;
+  font-size: 1.225rem;
   font-weight: 500;
   color: var(--text-primary);
 }
