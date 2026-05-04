@@ -41,7 +41,7 @@ import AppTopbar from "./components/layout/AppTopbar.vue";
 .content {
   flex: 1;
   overflow: auto;
-  padding: 16px 24px;
+  padding: 16px 24px 24px;
 }
 
 .content-inner {
