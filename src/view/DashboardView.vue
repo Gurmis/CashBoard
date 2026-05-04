@@ -7,13 +7,16 @@
         </div>
       </div>
       <div class="dashboard-toolbar__right">
-        <button class="dashboard-toolbar__action">+ Add Transaction</button>
+        <button class="dashboard-toolbar__action">
+          <Icon icon="lucide:plus" width="25" height="25" />
+          <span>Add Transaction</span>
+        </button>
       </div>
     </div>
     <div class="dashboard-stats">
       <div class="stat-card stat-card--blue surface">
         <div class="stat-card__icon">
-          <Icon icon="lucide:euro" />
+          <Icon icon="lucide:euro" width="25" height="25"/>
         </div>
 
         <div class="stat-card__content">
@@ -27,7 +30,7 @@
 
       <div class="stat-card stat-card--purple surface">
         <div class="stat-card__icon">
-          <Icon icon="lucide:wallet" />
+          <Icon icon="lucide:wallet" width="25" height="25" />
         </div>
 
         <div class="stat-card__content">
@@ -41,7 +44,7 @@
 
       <div class="stat-card surface stat-card--indigo">
         <div class="stat-card__icon">
-          <Icon icon="lucide:piggy-bank" />
+          <Icon icon="lucide:piggy-bank" width="25" height="25" />
         </div>
 
         <div class="stat-card__content">
@@ -75,42 +78,58 @@
                   <td>Connor McDavid</td>
                   <td>Income</td>
                   <td>7 April 2026</td>
-                  <td>-$2000</td>
-                  <td>...</td>
-                </tr>
+                  <td class="status-negative">-$2000</td>
+                  <td>
+                    <button class="icon-button" type="button" aria-label="Open transaction actions">
+                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
+                    </button>
+                  </td>                </tr>
                 <tr>
                   <td>Connor McDavid</td>
                   <td>Expense</td>
                   <td>7 April 2026</td>
-                  <td>-$2000</td>
-                  <td>...</td>
+                  <td class="status-negative">-$2000</td>
+                  <td>
+                    <button class="icon-button" type="button" aria-label="Open transaction actions">
+                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
+                    </button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Austin Mathews</td>
                   <td>Income</td>
                   <td>7 May 2026</td>
-                  <td>+$400</td>
-                  <td>...</td>
-                </tr>
+                  <td class="status-positive">+$400</td>
+                  <td>
+                    <button class="icon-button" type="button" aria-label="Open transaction actions">
+                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
+                    </button>
+                  </td>                </tr>
                 <tr>
                   <td>Leon Draisaitl</td>
                   <td>Income</td>
                   <td>7 January 2026</td>
-                  <td>+$2000</td>
-                  <td>...</td>
-                </tr>
+                  <td class="status-positive">+$2000</td>
+                  <td>
+                    <button class="icon-button" type="button" aria-label="Open transaction actions">
+                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
+                    </button>
+                  </td>                </tr>
               <tr>
                 <td>Juraj Slafkovsky</td>
                 <td>Income</td>
                 <td>7 February 2026</td>
-                <td>+$2000</td>
-                <td>...</td>
-              </tr>
+                <td class="status-positive">+$2000</td>
+                <td>
+                  <button class="icon-button" type="button" aria-label="Open transaction actions">
+                    <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
+                  </button>
+                </td>              </tr>
               </tbody>
               <tfoot>
               <tr>
                 <td colspan="5" class="table-footer-cell text-right">
-                  <button class="table-footer-action">View All →</button>
+                  <button class="table-footer-action text-link">View All →</button>
                 </td>
               </tr>
               </tfoot>
@@ -118,7 +137,25 @@
           </div>
         </div>
       </div>
-      <div class="dashboard-content__side-panel surface">Side Panel</div>
+      <div class="dashboard-content__side-panel">
+        <div class="side-card surface">
+          <div class="side-card__media">
+            <img src="../assets/images/getting_started.png" alt="getting_started">
+          </div>
+
+          <div class="side-card__content">
+            <h3 class="side-card__title">Getting Started</h3>
+
+            <p class="side-card__text">
+              Learn how to effectively manage your finances with CashBoard.
+            </p>
+
+            <button class="side-card__cta text-link">
+              Learn More →
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -159,6 +196,9 @@ import { Icon } from "@iconify/vue";
 }
 
 .dashboard-toolbar__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   min-height: 44px;
   padding: 0 20px;
   border-radius: var(--radius-xl);
@@ -185,15 +225,6 @@ import { Icon } from "@iconify/vue";
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
-
-  @media (max-width: 1195px) {
-    grid-template-columns: repeat(2, minmax(250px, 320px));
-    justify-content: start;
-  }
-
-  @media (max-width: 830px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 .stat-card {
@@ -301,7 +332,7 @@ import { Icon } from "@iconify/vue";
 .dashboard-content {
   display: flex;
   margin-top: 16px;
-  gap: 32px;
+  gap: 24px;
 }
 
 .dashboard-content__main-panel {
@@ -326,7 +357,34 @@ import { Icon } from "@iconify/vue";
   flex: 1;
   align-self: flex-start;
   min-height: 320px;
+  min-width: 240px;
+  overflow: hidden;
+}
+
+.side-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.side-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 16px;
+}
+
+.side-card__text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.side-card__cta {
+  align-self: flex-start;
 }
 
 .table-wrapper {
@@ -337,6 +395,9 @@ import { Icon } from "@iconify/vue";
 .transactions-table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 400;
 }
 
 .transactions-table th,
@@ -348,15 +409,18 @@ import { Icon } from "@iconify/vue";
 .transactions-table th {
   text-align: left;
   font-size: 0.875rem;
-  font-weight: 500;
   color: var(--text-muted);
+  font-weight: 600;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .transactions-table td {
-  font-size: 0.95rem;
-  color: var(--text-primary);
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.transactions-table td:first-child {
+  color: var(--link-color);
+  font-weight: 500;
 }
 
 .transactions-table tfoot tr td {
@@ -366,4 +430,62 @@ import { Icon } from "@iconify/vue";
 .text-right {
   text-align: right;
 }
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--icon-button-border);
+  border-radius: var(--radius-md);
+  background: var(--icon-button-bg);
+  color: var(--icon-button-color);
+
+  cursor: pointer;
+  transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+}
+
+.icon-button:hover {
+  background: var(--icon-button-hover-bg);
+  border-color: var(--icon-button-hover-border);
+  color: var(--icon-button-hover-color);
+}
+
+.icon-button__icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 1090px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .dashboard-content__main-panel {
+    width: 100%;
+  }
+
+  .side-card {
+    max-width: 320px;
+  }
+}
+
+//@media (max-width: 1195px) {
+//  .dashboard-stats {
+//  grid-template-columns: repeat(2, minmax(250px, 320px));
+//  justify-content: start;
+//  }
+//}
+//
+//@media (max-width: 830px) {
+//  .dashboard-stats {
+//    grid-template-columns: minmax(0, 1fr);
+//  }
+//}
+
 </style>
