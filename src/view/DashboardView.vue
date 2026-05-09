@@ -340,8 +340,6 @@ import { Icon } from "@iconify/vue";
   flex-direction: column;
   flex: 3;
   align-self: flex-start;
-  //min-height: 200px;
-  //background: var(--card-bg);
 }
 
 .main-panel__header {
@@ -474,18 +472,4 @@ import { Icon } from "@iconify/vue";
     max-width: 320px;
   }
 }
-
-//@media (max-width: 1195px) {
-//  .dashboard-stats {
-//  grid-template-columns: repeat(2, minmax(250px, 320px));
-//  justify-content: start;
-//  }
-//}
-//
-//@media (max-width: 830px) {
-//  .dashboard-stats {
-//    grid-template-columns: minmax(0, 1fr);
-//  }
-//}
-
 </style>
