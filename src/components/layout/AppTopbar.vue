@@ -3,10 +3,9 @@
     <div class="topbar__title">Dashboard</div>
 
     <div class="topbar__actions">
-      <button class="topbar__theme-button" type="button" @click="isDark = !isDark">
+      <Button variant="secondary" @click="isDark = !isDark">
         {{ isDark ? 'Light' : 'Dark'}}
-      </button>
-
+      </Button>
       <div class="topbar__avatar">PG</div>
     </div>
   </header>
@@ -14,6 +13,7 @@
 
 <script setup lang="ts">
 import {onMounted, ref, watch} from "vue";
+import Button from "@/components/ui/Button.vue";
 
 const isDark = ref(false);
 
@@ -30,7 +30,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .topbar {
-  height: 64px;
+  height: 72px;
   background: var(--surface-panel);
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
@@ -53,23 +53,6 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.topbar__theme-button {
-  min-height: 36px;
-  padding: 0 12px;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  background: var(--surface-panel);
-  color: var(--text-primary);
-  font-weight: 500;
-  transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast);
-}
-
-.topbar__theme-button:hover {
-  background: var(--surface-card-muted);
 }
 
 .topbar__avatar {

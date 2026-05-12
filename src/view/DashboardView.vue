@@ -7,10 +7,12 @@
         </div>
       </div>
       <div class="dashboard-toolbar__right">
-        <button class="dashboard-toolbar__action">
-          <Icon icon="lucide:plus" width="25" height="25" />
-          <span>Add Transaction</span>
-        </button>
+        <Button @click="clickHandler">
+          <template #icon>
+            <Icon icon="lucide:plus" width="25" height="25" />
+          </template>
+            <span>Add Transaction</span>
+        </Button>
       </div>
     </div>
     <div class="dashboard-stats">
@@ -124,7 +126,8 @@
                   <button class="icon-button" type="button" aria-label="Open transaction actions">
                     <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
                   </button>
-                </td>              </tr>
+                </td>
+              </tr>
               </tbody>
               <tfoot>
               <tr>
@@ -162,6 +165,11 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import Button from "@/components/ui/Button.vue";
+
+const clickHandler = () => {
+  console.log('click');
+}
 
 </script>
 
@@ -193,32 +201,6 @@ import { Icon } from "@iconify/vue";
   align-items: center;
   padding: 0 16px;
   color: var(--text-primary);
-}
-
-.dashboard-toolbar__action {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 20px;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--button-primary-border);
-  background: var(--button-primary-bg);
-  color: var(--button-primary-color);
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast),
-      color var(--transition-fast),
-      box-shadow var(--transition-fast),
-      transform var(--transition-fast);
-}
-
-.dashboard-toolbar__action:hover {
-  background: var(--button-primary-hover-bg);
-  border-color: var(--button-primary-hover-border);
-  color: var(--button-primary-hover-color);
 }
 
 .dashboard-stats {
