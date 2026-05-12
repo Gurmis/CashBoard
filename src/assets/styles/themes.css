@@ -62,6 +62,11 @@
     --button-secondary-hover-border: var(--slate-400);
     --button-secondary-hover-color: var(--slate-900);
 
+    --button-disabled-bg: var(--slate-100);
+    --button-disabled-border: var(--slate-200);
+    --button-disabled-color: var(--slate-400);
+
+
     /* inputs */
     --input-bg: var(--white);
     --input-border: var(--slate-300);
@@ -189,6 +194,10 @@
     --button-secondary-hover-bg: var(--white-a-06);
     --button-secondary-hover-border: var(--slate-400-a-18);
     --button-secondary-hover-color: var(--white);
+
+    --button-disabled-bg: var(--white-a-03);
+    --button-disabled-border: var(--slate-400-a-06);
+    --button-disabled-color: var(--slate-500);
 
     /* inputs */
     --input-bg: var(--white-a-03);
