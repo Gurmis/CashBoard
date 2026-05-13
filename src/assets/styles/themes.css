@@ -117,6 +117,7 @@
     --status-danger: var(--red-600);
     --status-danger-soft: var(--red-100);
     --status-info: var(--blue-500);
+    --status-info-soft: var(--blue-100);
 
     /* charts */
     --chart-1: var(--blue-600);
@@ -254,6 +255,7 @@
     --status-danger-soft: var(--red-500-a-18);
 
     --status-info: var(--blue-500);
+    --status-info-soft: var(--blue-500-a-18);
 
     /* charts */
     --chart-1: var(--purple-500);
