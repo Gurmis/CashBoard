@@ -1,6 +1,6 @@
 <template>
  <button
-     :class="['button', `button--${props.variant}`, `button--${props.size}`]"
+     :class="['button', `button--${variant}`, `button--${size}`]"
      :type="props.type"
      :disabled="props.disabled || props.loading"
  >

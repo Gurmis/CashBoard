@@ -78,7 +78,9 @@
               <tbody>
                 <tr>
                   <td>Connor McDavid</td>
-                  <td>Income</td>
+                  <td>
+                    <Badge variant="danger">Expense</Badge>
+                  </td>
                   <td>7 April 2026</td>
                   <td class="status-negative">-$2000</td>
                   <td>
@@ -88,7 +90,7 @@
                   </td>                </tr>
                 <tr>
                   <td>Connor McDavid</td>
-                  <td>Expense</td>
+                  <td><Badge variant="danger">Expense</Badge></td>
                   <td>7 April 2026</td>
                   <td class="status-negative">-$2000</td>
                   <td>
@@ -99,17 +101,22 @@
                 </tr>
                 <tr>
                   <td>Austin Mathews</td>
-                  <td>Income</td>
+                  <td>
+                    <Badge variant="success">Income</Badge>
+                  </td>
                   <td>7 May 2026</td>
                   <td class="status-positive">+$400</td>
                   <td>
                     <button class="icon-button" type="button" aria-label="Open transaction actions">
                       <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
                     </button>
-                  </td>                </tr>
+                  </td>
+                </tr>
                 <tr>
                   <td>Leon Draisaitl</td>
-                  <td>Income</td>
+                  <td>
+                    <Badge variant="success">Income</Badge>
+                  </td>
                   <td>7 January 2026</td>
                   <td class="status-positive">+$2000</td>
                   <td>
@@ -119,7 +126,9 @@
                   </td>                </tr>
               <tr>
                 <td>Juraj Slafkovsky</td>
-                <td>Income</td>
+                <td>
+                  <Badge variant="success">Income</Badge>
+                </td>
                 <td>7 February 2026</td>
                 <td class="status-positive">+$2000</td>
                 <td>
@@ -166,6 +175,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import Button from "@/components/ui/Button.vue";
+import Badge from "@/components/ui/Badge.vue";
 
 const clickHandler = () => {
   console.log('click');
