@@ -1,8 +1,11 @@
 <template>
  <button
-     :class="['button', `button--${variant}`, `button--${size}`]"
+     class="button"
+     :class="[`button--${variant}`, `button--${size}`]"
      :type="props.type"
      :disabled="props.disabled || props.loading"
+     @click="emit('click', $event)"
+
  >
    <slot name="icon" v-if="hasIcon && props.iconPosition === 'left'"/>
    <slot />
@@ -29,6 +32,7 @@ const props = withDefaults(defineProps<{
   iconPosition: 'left'
 })
 
+const emit = defineEmits(['click'])
 const slots = useSlots();
 
 const hasIcon = computed(() => {

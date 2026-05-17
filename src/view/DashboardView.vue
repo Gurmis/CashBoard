@@ -11,7 +11,7 @@
           <template #icon>
             <Icon icon="lucide:plus" width="25" height="25" />
           </template>
-            <span>Add Transaction</span>
+          <span>Add Transaction</span>
         </Button>
       </div>
     </div>
@@ -84,19 +84,20 @@
                   <td>7 April 2026</td>
                   <td class="status-negative">-$2000</td>
                   <td>
-                    <button class="icon-button" type="button" aria-label="Open transaction actions">
-                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
-                    </button>
-                  </td>                </tr>
+                    <IconButton aria-label="ellipsis_button">
+                      <Icon icon="lucide:ellipsis"/>
+                    </IconButton>
+                  </td>
+                </tr>
                 <tr>
                   <td>Connor McDavid</td>
                   <td><Badge variant="danger">Expense</Badge></td>
                   <td>7 April 2026</td>
                   <td class="status-negative">-$2000</td>
                   <td>
-                    <button class="icon-button" type="button" aria-label="Open transaction actions">
-                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
-                    </button>
+                    <IconButton aria-label="ellipsis_button" @click="clickHandler">
+                      <Icon icon="lucide:ellipsis"/>
+                    </IconButton>
                   </td>
                 </tr>
                 <tr>
@@ -107,9 +108,9 @@
                   <td>7 May 2026</td>
                   <td class="status-positive">+$400</td>
                   <td>
-                    <button class="icon-button" type="button" aria-label="Open transaction actions">
-                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
-                    </button>
+                    <IconButton aria-label="ellipsis_button">
+                      <Icon icon="lucide:ellipsis"/>
+                    </IconButton>
                   </td>
                 </tr>
                 <tr>
@@ -120,10 +121,11 @@
                   <td>7 January 2026</td>
                   <td class="status-positive">+$2000</td>
                   <td>
-                    <button class="icon-button" type="button" aria-label="Open transaction actions">
-                      <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
-                    </button>
-                  </td>                </tr>
+                    <IconButton aria-label="ellipsis_button">
+                      <Icon icon="lucide:ellipsis"/>
+                    </IconButton>
+                  </td>
+                </tr>
               <tr>
                 <td>Juraj Slafkovsky</td>
                 <td>
@@ -132,9 +134,9 @@
                 <td>7 February 2026</td>
                 <td class="status-positive">+$2000</td>
                 <td>
-                  <button class="icon-button" type="button" aria-label="Open transaction actions">
-                    <Icon icon="lucide:ellipsis" class="icon-button__icon" aria-hidden="true" />
-                  </button>
+                  <IconButton aria-label="ellipsis_button">
+                    <Icon icon="lucide:ellipsis" />
+                  </IconButton>
                 </td>
               </tr>
               </tbody>
@@ -176,9 +178,10 @@
 import { Icon } from "@iconify/vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
+import IconButton from "@/components/ui/IconButton.vue";
 
-const clickHandler = () => {
-  console.log('click');
+const clickHandler = (e: Event) => {
+  console.log('click', e);
 }
 
 </script>
@@ -421,35 +424,7 @@ const clickHandler = () => {
   text-align: right;
 }
 
-.icon-button {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
-  border: 1px solid var(--icon-button-border);
-  border-radius: var(--radius-md);
-  background: var(--icon-button-bg);
-  color: var(--icon-button-color);
-
-  cursor: pointer;
-  transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast),
-      color var(--transition-fast);
-}
-
-.icon-button:hover {
-  background: var(--icon-button-hover-bg);
-  border-color: var(--icon-button-hover-border);
-  color: var(--icon-button-hover-color);
-}
-
-.icon-button__icon {
-  width: 18px;
-  height: 18px;
-}
 
 @media (max-width: 1090px) {
   .dashboard-content {
