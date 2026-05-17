@@ -172,6 +172,7 @@
       </div>
     </div>
   </div>
+  <Link>About</Link>
 </template>
 
 <script setup lang="ts">
@@ -179,6 +180,7 @@ import { Icon } from "@iconify/vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
 import IconButton from "@/components/ui/IconButton.vue";
+import Link from "@/components/ui/Link.vue";
 
 const clickHandler = (e: Event) => {
   console.log('click', e);
