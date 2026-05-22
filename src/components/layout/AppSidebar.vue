@@ -3,15 +3,23 @@
     <div class="sidebar__brand">CashBoard</div>
 
     <nav class="sidebar__nav">
-      <a href="#" class="sidebar__link sidebar__link--active nav-item nav-item--active">Dashboard</a>
-      <a href="#" class="sidebar__link nav-item">Expenses</a>
-      <a href="#" class="sidebar__link nav-item">Reports</a>
-      <a href="#" class="sidebar__link nav-item">Settings</a>
+      <NavItem href="#serus" class="sidebar__link" active>
+        <Icon icon="lucide:home" />
+        Dashboard
+      </NavItem>
+      <NavItem href="#serus" class="sidebar__link">
+        <Icon icon="lucide:wallet" />
+        Expenses
+      </NavItem>
+      <NavItem href="#serus" class="sidebar__link">Reports</NavItem>
+      <NavItem href="#serus" class="sidebar__link">Settings</NavItem>
     </nav>
   </aside>
 </template>
 
 <script setup lang="ts">
+import NavItem from "@/components/ui/NavItem.vue";
+import {Icon} from "@iconify/vue";
 </script>
 
 <style lang="scss" scoped>
