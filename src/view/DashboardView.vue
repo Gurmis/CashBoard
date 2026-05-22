@@ -172,7 +172,6 @@
       </div>
     </div>
   </div>
-  <Link>About</Link>
 </template>
 
 <script setup lang="ts">
