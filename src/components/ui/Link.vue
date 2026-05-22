@@ -1,15 +1,15 @@
 <template>
-  <RouterLink v-if="to" :to="to">
+  <RouterLink v-if="to" :to="to" v-bind="$attrs">
     <slot />
   </RouterLink>
-  <a v-else-if="href" :href="href" :target="target" :rel="computedRel">
+  <a v-else-if="href" :href="href"  v-bind="$attrs" :target="target" :rel="computedRel">
     <slot />
   </a>
 </template>
 
 <script setup lang="ts">
 import { type RouteLocationRaw } from 'vue-router';
-import {computed} from "vue";
+import {computed, onMounted} from "vue";
 
 const props = defineProps<{
   to?: RouteLocationRaw,
@@ -26,8 +26,14 @@ const computedRel = computed(() => {
   return props.rel;
 });
 
+
+onMounted(() => {
 // warning if no `to` or `href` prop is provided
-if (import.meta.env.DEV && !props.to && !props.href) {
-  console.warn('Link component requires either `to` or `href` prop');
-}
+  if (import.meta.env.DEV && !props.to && !props.href) {
+    console.log('to', props.to)
+    console.log('href', props.href)
+    console.warn('Link component requires either `to` or `href` prop');
+  }
+})
+
 </script>

@@ -29,6 +29,8 @@ const props = withDefaults(defineProps<{
 .nav-item {
   display: flex;
   align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
   color: var(--nav-item-color);
   /*border: 1px solid transparent;*/
   border-radius: var(--radius-xl);
@@ -69,5 +71,4 @@ const props = withDefaults(defineProps<{
     gap: 8px;
   }
 }
-
 </style>

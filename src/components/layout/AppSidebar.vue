@@ -3,23 +3,48 @@
     <div class="sidebar__brand">CashBoard</div>
 
     <nav class="sidebar__nav">
-      <NavItem href="#serus" class="sidebar__link" active>
-        <Icon icon="lucide:home" />
-        Dashboard
+      <NavItem
+          v-for="item in navItems"
+          :key="item.href ?? String(item.to)"
+          :href="item.href"
+          :to="item.to"
+          :active="item.active"
+      >
+        <template #icon v-if="item.icon">
+          <Icon :icon="item.icon" />
+        </template>
+        {{item.label}}
       </NavItem>
-      <NavItem href="#serus" class="sidebar__link">
-        <Icon icon="lucide:wallet" />
-        Expenses
-      </NavItem>
-      <NavItem href="#serus" class="sidebar__link">Reports</NavItem>
-      <NavItem href="#serus" class="sidebar__link">Settings</NavItem>
     </nav>
   </aside>
 </template>
 
 <script setup lang="ts">
 import NavItem from "@/components/ui/NavItem.vue";
-import {Icon} from "@iconify/vue";
+import { Icon } from "@iconify/vue";
+import type { NavItemConfig } from "@/types.ts";
+
+const navItems: NavItemConfig[] = [
+  {
+   href: '#1',
+   label: 'Dashboard',
+   icon: 'lucide:home'
+  },
+  {
+    href: '#2',
+    label: 'Expenses',
+    icon: 'lucide:wallet',
+    active: true
+  },
+  {
+    href: '#3',
+    label: 'Reports',
+  },
+  {
+    href: '#4',
+    label: 'Settings',
+  }
+]
 </script>
 
 <style lang="scss" scoped>
@@ -48,19 +73,5 @@ import {Icon} from "@iconify/vue";
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.sidebar__link {
-  min-height: 44px;
-  padding: 8px 12px;
-}
-
-.sidebar__link:hover {
-}
-
-.sidebar__link--active {
-}
-
-.sidebar__link--active:hover {
 }
 </style>
