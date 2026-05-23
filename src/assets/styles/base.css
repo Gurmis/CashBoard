@@ -135,13 +135,3 @@ svg {
 .status-negative {
   color: var(--status-danger);
 }
-
-.text-link {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.text-link:hover {
-  color: var(--link-hover-color);
-}

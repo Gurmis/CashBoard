@@ -143,7 +143,7 @@
               <tfoot>
               <tr>
                 <td colspan="5" class="table-footer-cell text-right">
-                  <button class="table-footer-action text-link">View All →</button>
+                  <text-link href="#">View All →</text-link>
                 </td>
               </tr>
               </tfoot>
@@ -163,10 +163,7 @@
             <p class="side-card__text">
               Learn how to effectively manage your finances with CashBoard.
             </p>
-
-            <button class="side-card__cta text-link">
-              Learn More →
-            </button>
+            <text-link href="#">Learn More →</text-link>
           </div>
         </div>
       </div>
@@ -179,7 +176,7 @@ import { Icon } from "@iconify/vue";
 import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
 import IconButton from "@/components/ui/IconButton.vue";
-import Link from "@/components/ui/Link.vue";
+import TextLink from "@/components/ui/TextLink.vue";
 
 const clickHandler = (e: Event) => {
   console.log('click', e);
