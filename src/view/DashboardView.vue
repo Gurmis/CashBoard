@@ -48,69 +48,28 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Connor McDavid</td>
+                <tr v-for="(transaction, id) in transactions" :key="id+transaction.name">
+                  <td>{{transaction.name}}</td>
                   <td>
-                    <Badge variant="danger">Expense</Badge>
+                    <Badge
+                        :variant="transaction.amountVariant === 'negative'
+                        ? 'danger'
+                        : 'success'"
+                    >
+                      {{transaction.type}}
+                    </Badge>
                   </td>
-                  <td>7 April 2026</td>
-                  <td class="status-negative">-$2000</td>
+                  <td>{{transaction.date}}</td>
+                  <td :class="`status-${transaction.amountVariant}`">{{transaction.amount}}</td>
                   <td>
-                    <IconButton aria-label="ellipsis_button">
+                    <IconButton
+                        aria-label="ellipsis_button"
+                        @click="clickHandler"
+                    >
                       <Icon icon="lucide:ellipsis"/>
                     </IconButton>
                   </td>
                 </tr>
-                <tr>
-                  <td>Connor McDavid</td>
-                  <td><Badge variant="danger">Expense</Badge></td>
-                  <td>7 April 2026</td>
-                  <td class="status-negative">-$2000</td>
-                  <td>
-                    <IconButton aria-label="ellipsis_button" @click="clickHandler">
-                      <Icon icon="lucide:ellipsis"/>
-                    </IconButton>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Austin Mathews</td>
-                  <td>
-                    <Badge variant="success">Income</Badge>
-                  </td>
-                  <td>7 May 2026</td>
-                  <td class="status-positive">+$400</td>
-                  <td>
-                    <IconButton aria-label="ellipsis_button">
-                      <Icon icon="lucide:ellipsis"/>
-                    </IconButton>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Leon Draisaitl</td>
-                  <td>
-                    <Badge variant="success">Income</Badge>
-                  </td>
-                  <td>7 January 2026</td>
-                  <td class="status-positive">+$2000</td>
-                  <td>
-                    <IconButton aria-label="ellipsis_button">
-                      <Icon icon="lucide:ellipsis"/>
-                    </IconButton>
-                  </td>
-                </tr>
-              <tr>
-                <td>Juraj Slafkovsky</td>
-                <td>
-                  <Badge variant="success">Income</Badge>
-                </td>
-                <td>7 February 2026</td>
-                <td class="status-positive">+$2000</td>
-                <td>
-                  <IconButton aria-label="ellipsis_button">
-                    <Icon icon="lucide:ellipsis" />
-                  </IconButton>
-                </td>
-              </tr>
               </tbody>
               <tfoot>
               <tr>
@@ -182,6 +141,43 @@ const statCards: StatCardConfig[] = [
     icon: "lucide:piggy-bank"
   }
 ]
+
+const transactions = [{
+  name: "Connor McDavid",
+  type: "Expense",
+  date: "7 April 2026",
+  amount: "-$2000",
+  amountVariant: "negative",
+  action: "ellipsis"
+}, {
+  name: "Connor McDavid",
+  type: "Expense",
+  date: "17 April 2026",
+  amount: "+$4000",
+  amountVariant: "positive",
+  action: "ellipsis"
+}, {
+  name: 'Austin Mathews',
+  type: 'Income',
+  date: '7 May 2026',
+  amount: '+$400',
+  amountVariant: 'positive',
+  action: 'ellipsis'
+}, {
+  name: 'Leon Draisaitl',
+  type: 'Income',
+  date: '7 January 2026',
+  amount: '+$2000',
+  amountVariant: 'positive',
+  action: 'ellipsis'
+  }, {
+  name: 'Juraj Slafkovsky',
+  type: 'Expense',
+  date: '7 February 2026',
+  amount: '-$2000',
+  amountVariant: 'negative',
+  action: 'ellipsis'
+  }]
 </script>
 
 <style lang="scss" scoped>
