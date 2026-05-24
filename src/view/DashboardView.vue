@@ -16,47 +16,41 @@
       </div>
     </div>
     <div class="dashboard-stats">
-      <div class="stat-card stat-card--blue surface">
-        <div class="stat-card__icon">
+      <stat-card
+          variant="blue"
+          label="Total Balance"
+          value="$18,300.45"
+          trend="-3%"
+          trend-variant="negative"
+      >
+        <template #icon>
           <Icon icon="lucide:euro" width="25" height="25"/>
-        </div>
+        </template>
+      </stat-card>
 
-        <div class="stat-card__content">
-          <div class="stat-card__label">Total Balance</div>
-          <div class="stat-card__summary">
-            <div class="stat-card__value">$18,300.45</div>
-            <div class="stat-card__trend stat-card__trend--positive">+8%</div>
-          </div>
-        </div>
-      </div>
+      <stat-card
+          variant="purple"
+          label="Available Balance"
+          value="6,240.00"
+          trend="-7%"
+          trend-variant="negative"
+      >
+        <template #icon>
+          <Icon icon="lucide:wallet" width="25" height="25"/>
+        </template>
+      </stat-card>
 
-      <div class="stat-card stat-card--purple surface">
-        <div class="stat-card__icon">
-          <Icon icon="lucide:wallet" width="25" height="25" />
-        </div>
-
-        <div class="stat-card__content">
-          <div class="stat-card__label">Available Balance</div>
-          <div class="stat-card__summary">
-            <div class="stat-card__value">$6,240.00</div>
-            <div class="stat-card__trend stat-card__trend--negative">-3%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="stat-card surface stat-card--indigo">
-        <div class="stat-card__icon">
-          <Icon icon="lucide:piggy-bank" width="25" height="25" />
-        </div>
-
-        <div class="stat-card__content">
-          <div class="stat-card__label">Savings</div>
-          <div class="stat-card__summary">
-            <div class="stat-card__value">$12,060.45</div>
-            <div class="stat-card__trend stat-card__trend--positive">+12%</div>
-          </div>
-        </div>
-      </div>
+      <stat-card
+          variant="indigo"
+          label="Savings"
+          value="$12,060.45"
+          trend="10%"
+          trend-variant="positive"
+      >
+        <template #icon>
+          <Icon icon="lucide:piggy-bank" width="25" height="25"/>
+        </template>
+      </stat-card>
     </div>
     <div class="dashboard-content">
       <div class="dashboard-content__main-panel">
@@ -177,6 +171,7 @@ import Button from "@/components/ui/Button.vue";
 import Badge from "@/components/ui/Badge.vue";
 import IconButton from "@/components/ui/IconButton.vue";
 import TextLink from "@/components/ui/TextLink.vue";
+import StatCard from "@/components/ui/StatCard.vue";
 
 const clickHandler = (e: Event) => {
   console.log('click', e);
@@ -218,108 +213,6 @@ const clickHandler = (e: Event) => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
-}
-
-.stat-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  min-height: 100px;
-  background: var(--stat-card-bg);
-  border: 1px solid var(--stat-card-border);
-  color: var(--text-primary);
-}
-
-.stat-card--purple {
-  --stat-card-bg: var(--metric-purple-bg);
-  --stat-card-border: var(--metric-purple-border);
-  --stat-card-icon-bg: var(--metric-purple-icon-bg);
-  --stat-card-icon-color: var(--metric-purple-icon-color);
-}
-
-.stat-card--blue {
-  --stat-card-bg: var(--metric-blue-bg);
-  --stat-card-border: var(--metric-blue-border);
-  --stat-card-icon-bg: var(--metric-blue-icon-bg);
-  --stat-card-icon-color: var(--metric-blue-icon-color);
-}
-
-.stat-card--indigo {
-  --stat-card-bg: var(--metric-indigo-bg);
-  --stat-card-border: var(--metric-indigo-border);
-  --stat-card-icon-bg: var(--metric-indigo-icon-bg);
-  --stat-card-icon-color: var(--metric-indigo-icon-color);
-}
-
-.stat-card__icon {
-  width: 38px;
-  height: 48px;
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: var(--radius-lg);
-
-  background: var(--stat-card-icon-bg);
-  color: var(--stat-card-icon-color);
-}
-
-.stat-card__icon--balance {
-  background: var(--accent-soft);
-  color: var(--accent-primary);
-}
-
-.stat-card__icon--available {
-  background: var(--status-success-soft);
-  color: var(--status-success);
-}
-
-.stat-card__icon--savings {
-  background: var(--status-warning-soft);
-  color: var(--status-warning);
-}
-
-.stat-card__content {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
-.stat-card__label {
-  font-size: 0.975rem;
-  color: var(--text-muted);
-}
-
-
-.stat-card__summary {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.stat-card__value {
-  font-size: 1.225rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.stat-card__trend {
-  font-size: 0.9rem;
-  color: var(--stat-card-trend-color);
-}
-
-.stat-card__trend--positive {
-  color: var(--status-success);
-}
-
-.stat-card__trend--negative {
-  color: var(--status-danger);
 }
 
 .dashboard-content {
@@ -417,12 +310,6 @@ const clickHandler = (e: Event) => {
 .transactions-table tfoot tr td {
   border-bottom: none;
 }
-
-.text-right {
-  text-align: right;
-}
-
-
 
 @media (max-width: 1090px) {
   .dashboard-content {
