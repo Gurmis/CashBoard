@@ -17,38 +17,15 @@
     </div>
     <div class="dashboard-stats">
       <stat-card
-          variant="blue"
-          label="Total Balance"
-          value="$18,300.45"
-          trend="-3%"
-          trend-variant="negative"
+          v-for="card in statCardsSamle"
+          :variant="card.variant"
+          :label="card.label"
+          :value="card.value"
+          :trend="card.trend"
+          :trend-variant="card.trendVariant"
       >
         <template #icon>
-          <Icon icon="lucide:euro" width="25" height="25"/>
-        </template>
-      </stat-card>
-
-      <stat-card
-          variant="purple"
-          label="Available Balance"
-          value="6,240.00"
-          trend="-7%"
-          trend-variant="negative"
-      >
-        <template #icon>
-          <Icon icon="lucide:wallet" width="25" height="25"/>
-        </template>
-      </stat-card>
-
-      <stat-card
-          variant="indigo"
-          label="Savings"
-          value="$12,060.45"
-          trend="10%"
-          trend-variant="positive"
-      >
-        <template #icon>
-          <Icon icon="lucide:piggy-bank" width="25" height="25"/>
+          <Icon :icon="card.icon" width="25" height="25"/>
         </template>
       </stat-card>
     </div>
@@ -172,11 +149,38 @@ import Badge from "@/components/ui/Badge.vue";
 import IconButton from "@/components/ui/IconButton.vue";
 import TextLink from "@/components/ui/TextLink.vue";
 import StatCard from "@/components/ui/StatCard.vue";
+import type {StatCardConfig} from "@/types.ts";
 
 const clickHandler = (e: Event) => {
   console.log('click', e);
 }
 
+const statCardsSamle: StatCardConfig[] = [
+  {
+    variant: "blue",
+    label: "Total Balance",
+    value: "$18,300.00",
+    trend: "-3%",
+    trendVariant: "negative",
+    icon: "lucide:euro"
+  },
+  {
+    variant: "purple",
+    label: "Available Balance",
+    value: "$6,240.00",
+    trend: "-7%",
+    trendVariant: "negative",
+    icon: "lucide:wallet"
+  },
+  {
+    variant: "indigo",
+    label: "Savings",
+    value: "$12,060.00",
+    trend: "10%",
+    trendVariant: "positive",
+    icon: "lucide:piggy-bank"
+  }
+]
 </script>
 
 <style lang="scss" scoped>

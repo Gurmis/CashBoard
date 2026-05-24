@@ -7,3 +7,12 @@ export interface NavItemConfig {
   label: string;
   active?: boolean;
 }
+
+export interface StatCardConfig {
+  variant?: 'blue' | 'purple' | 'indigo',
+  label: string,
+  value: string,
+  trend: string,
+  trendVariant: 'positive' | 'negative',
+  icon: string
+}
