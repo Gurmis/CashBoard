@@ -16,18 +16,19 @@
       </div>
     </div>
     <div class="dashboard-stats">
-      <stat-card
-          v-for="card in statCardsSamle"
+      <StatCard
+          v-for="card in statCards"
           :variant="card.variant"
           :label="card.label"
           :value="card.value"
           :trend="card.trend"
           :trend-variant="card.trendVariant"
+          :key="card.label"
       >
         <template #icon>
           <Icon :icon="card.icon" width="25" height="25"/>
         </template>
-      </stat-card>
+      </StatCard>
     </div>
     <div class="dashboard-content">
       <div class="dashboard-content__main-panel">
@@ -134,7 +135,7 @@
             <p class="side-card__text">
               Learn how to effectively manage your finances with CashBoard.
             </p>
-            <text-link href="#">Learn More →</text-link>
+            <TextLink href="#">Learn More →</TextLink>
           </div>
         </div>
       </div>
@@ -155,7 +156,7 @@ const clickHandler = (e: Event) => {
   console.log('click', e);
 }
 
-const statCardsSamle: StatCardConfig[] = [
+const statCards: StatCardConfig[] = [
   {
     variant: "blue",
     label: "Total Balance",

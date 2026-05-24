@@ -24,8 +24,8 @@ const props = withDefaults(defineProps<{
   variant?: 'blue' | 'purple' | 'indigo',
   label: string,
   value: string,
-  trend: string,
-  trendVariant: 'positive' | 'negative',
+  trend?: string,
+  trendVariant?: 'positive' | 'negative',
 }>(),
     {
       variant: 'blue'
