@@ -48,7 +48,7 @@ const props = withDefaults(defineProps<{
     transform: translateY(-2px);
   }
 
-  &--active {
+  &--active, &.router-link-exact-active {
     background: var(--nav-item-active-bg);
     color: var(--nav-item-active-color);
     border-color: var(--nav-item-active-border);
