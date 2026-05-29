@@ -23,7 +23,6 @@
     padding: 16px 24px 24px;
 
     &-inner {
-      max-width: 1120px;
       width: 100%;
       margin: 0 auto;
     }
