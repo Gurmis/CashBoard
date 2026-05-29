@@ -26,22 +26,29 @@ import type { NavItemConfig } from "@/types.ts";
 
 const navItems: NavItemConfig[] = [
   {
-   href: '#1',
+   to: {
+     name: 'dashboard'
+   },
    label: 'Dashboard',
    icon: 'lucide:home'
   },
   {
-    href: '#2',
+    to: {
+      name: 'expenses'
+    },
     label: 'Expenses',
     icon: 'lucide:wallet',
-    active: true
   },
   {
-    href: '#3',
+    to: {
+      name: 'reports'
+    },
     label: 'Reports',
   },
   {
-    href: '#4',
+    to: {
+      name: 'settings'
+    },
     label: 'Settings',
   }
 ]
