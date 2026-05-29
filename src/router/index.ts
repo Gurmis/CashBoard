@@ -28,7 +28,10 @@ const routes = [
         children: [
             { path: '', redirect: {name: 'dashboard'}},
             ...appRoutes
-        ]
+        ],
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         path: '/login',
@@ -42,5 +45,16 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 })
+router.beforeEach((to, from) => {
+    const isAuthenticated = false;
+    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+    if (requiresAuth && !isAuthenticated) {
+        return {name: 'login'};
+    } else if (to.name === 'login' && isAuthenticated) {
+        return {name: 'dashboard'};
+    }
+})
+
 
 export default router
