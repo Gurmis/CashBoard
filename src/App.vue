@@ -1,23 +1,11 @@
 <template>
   <div class="app-shell">
-    <div class="sidebar-wrapper">
-      <AppSidebar />
-    </div>
-    <div class="app-main">
-      <AppTopbar />
-      <section class="content">
-        <div class="content-inner">
-          <RouterView />
-        </div>
-      </section>
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import AppSidebar from "./components/layout/AppSidebar.vue";
-import AppTopbar from "./components/layout/AppTopbar.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -25,28 +13,5 @@ import AppTopbar from "./components/layout/AppTopbar.vue";
   display: flex;
   min-height: 100vh;
   background: var(--surface-page);
-}
-
-.sidebar-wrapper {
-  width: 256px;
-  flex-shrink: 0;
-}
-
-.app-main {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.content {
-  flex: 1;
-  overflow: auto;
-  padding: 16px 24px 24px;
-}
-
-.content-inner {
-  max-width: 1120px;
-  width: 100%;
-  margin: 0 auto;
 }
 </style>
