@@ -15,7 +15,10 @@ const appRoutes = [
 ]
 
 const authRoutes = [
-    { path: '', component: LoginView }
+    {   name: 'login',
+        path: '',
+        component: LoginView
+    }
 ]
 
 const routes = [
@@ -28,7 +31,6 @@ const routes = [
         ]
     },
     {
-        name: 'login',
         path: '/login',
         component: AuthLayout,
         children: authRoutes
