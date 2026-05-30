@@ -12,7 +12,9 @@
 
         <div class="login__footer">
           <TextLink href="#">Forgot Password?</TextLink>
-          <Button type="button">Login</Button>
+          <Button type="button" @click="loginHandler" :loading="isLoading">
+            Login
+          </Button>
         </div>
       </form>
     </div>
@@ -22,6 +24,26 @@
 <script setup lang="ts">
 import Button from "@/components/ui/Button.vue";
 import TextLink from "@/components/ui/TextLink.vue";
+import { useFakeAuth } from "@/composables/useFakeAuth.ts";
+import router from "@/router";
+import { ref } from "vue";
+
+const { login } = useFakeAuth();
+
+const isLoading = ref(false);
+
+const loginHandler = async () => {
+  isLoading.value = true;
+
+  try {
+    await login();
+    await router.push({ name: 'dashboard' });
+  } catch (err) {
+    console.error('Login failed: ', err)
+  } finally {
+    isLoading.value = false;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
