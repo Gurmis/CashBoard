@@ -40,7 +40,6 @@ const routes = [
     },
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
-
 const router = createRouter({
     history: createWebHistory(),
     routes,
@@ -50,11 +49,10 @@ router.beforeEach((to, from) => {
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
     if (requiresAuth && !isAuthenticated) {
-        return {name: 'login'};
+        return { name: 'login' };
     } else if (to.name === 'login' && isAuthenticated) {
-        return {name: 'dashboard'};
+        return { name: 'dashboard' };
     }
 })
-
 
 export default router
