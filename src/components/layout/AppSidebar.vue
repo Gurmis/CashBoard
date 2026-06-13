@@ -16,6 +16,14 @@
         {{item.label}}
       </NavItem>
     </nav>
+    <div class="sidebar__footer">
+      <Button @click="handleLogout" size="sm" variant="secondary">
+        <template #icon>
+          <Icon icon="lucide:log-out" />
+        </template>
+        Logout
+      </Button>
+    </div>
   </aside>
 </template>
 
@@ -23,6 +31,17 @@
 import NavItem from "@/components/ui/NavItem.vue";
 import { Icon } from "@iconify/vue";
 import type { NavItemConfig } from "@/types.ts";
+import {useFakeAuth} from "@/composables/useFakeAuth.ts";
+import Button from "@/components/ui/Button.vue";
+import {useRouter} from "vue-router";
+
+const { logout } = useFakeAuth();
+const router = useRouter();
+
+const handleLogout = async () => {
+  await logout();
+  await router.push({ name: 'login' });
+}
 
 const navItems: NavItemConfig[] = [
   {
@@ -80,5 +99,11 @@ const navItems: NavItemConfig[] = [
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
 }
 </style>
