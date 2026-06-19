@@ -194,20 +194,20 @@ const transactions = [{
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-}
 
-.dashboard-toolbar__left,
-.dashboard-toolbar__right {
-  display: flex;
-}
+  &__left,
+  &__right {
+    display: flex;
+  }
 
-.dashboard-toolbar__filter {
-  min-height: 44px;
-  min-width: 180px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 16px;
-  color: var(--text-primary);
+  &__filter {
+    min-height: 44px;
+    min-width: 180px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 16px;
+    color: var(--text-primary);
+  }
 }
 
 .dashboard-stats {
@@ -220,30 +220,32 @@ const transactions = [{
   display: flex;
   margin-top: 16px;
   gap: 24px;
+
+  &__main-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    align-self: flex-start;
+  }
+
+  &__side-panel {
+    flex: 1;
+    align-self: flex-start;
+    min-height: 320px;
+    min-width: 240px;
+    overflow: hidden;
+  }
 }
 
-.dashboard-content__main-panel {
-  display: flex;
-  flex-direction: column;
-  flex: 3;
-  align-self: flex-start;
-}
+.main-panel {
+  &__header {
+    margin-bottom: 16px;
+  }
 
-.main-panel__header {
-  margin-bottom: 16px;
-}
-
-.main-panel__body {
-  flex: 1;
-  min-width: 0;
-}
-
-.dashboard-content__side-panel {
-  flex: 1;
-  align-self: flex-start;
-  min-height: 320px;
-  min-width: 240px;
-  overflow: hidden;
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 .side-card {
@@ -253,23 +255,23 @@ const transactions = [{
   overflow: hidden;
   background: var(--surface-card);
   border: 1px solid var(--border-subtle);
-}
 
-.side-card__content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
 
-.side-card__text {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
+  &__text {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
 
-.side-card__cta {
-  align-self: flex-start;
+  &__cta {
+    align-self: flex-start;
+  }
 }
 
 .table-wrapper {
@@ -315,10 +317,10 @@ const transactions = [{
 @media (max-width: 1090px) {
   .dashboard-content {
     flex-direction: column;
-  }
 
-  .dashboard-content__main-panel {
-    width: 100%;
+    &__main-panel {
+      width: 100%;
+    }
   }
 
   .side-card {
