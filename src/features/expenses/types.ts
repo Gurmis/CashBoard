@@ -5,3 +5,10 @@ export interface Expense {
     category: string;
     date: string;
 }
+
+export interface ExpenseSummary {
+    id: string,
+    label: string,
+    value: string,
+    trend?: string,
+}
