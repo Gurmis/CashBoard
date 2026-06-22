@@ -37,7 +37,39 @@
         </div>
         <div class="main-panel__body surface">
           <div class="table-wrapper">
-            table here
+            <table class="transactions-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr v-for="(expense, id) in expenses" :key="id+expense.description">
+                <td></td>
+                <td>{{expense.description}}</td>
+                <td>{{expense.category}}</td>
+                <td>
+
+                </td>
+                <td>{{expense.date}}</td>
+                <td>{{expense.amount}}</td>
+                <td>
+                  <IconButton
+                      aria-label="ellipsis_button"
+                      @click="clickHandler"
+                  >
+                    <Icon icon="lucide:ellipsis"/>
+                  </IconButton>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
