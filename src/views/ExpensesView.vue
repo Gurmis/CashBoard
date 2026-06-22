@@ -77,17 +77,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import Badge from "@/components/ui/Badge.vue";
 import StatCard from "@/components/ui/StatCard.vue";
 import IconButton from "@/components/ui/IconButton.vue";
 import {Icon} from "@iconify/vue";
-import TextLink from "@/components/ui/TextLink.vue";
 import Button from "@/components/ui/Button.vue";
-import type {StatCardConfig} from "@/types.ts";
-import {onMounted, ref, type Ref} from "vue";
+import {onMounted} from "vue";
 import {useExpenses} from "@/composables/useExpenses.ts";
 
-// const statCards: Ref<StatCardConfig[] | null> = ref(null);
 const {
   expenses,
   statCards,
