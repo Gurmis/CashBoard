@@ -135,3 +135,43 @@ svg {
 .status-negative {
   color: var(--status-danger);
 }
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 14px 12px;
+  white-space: nowrap;
+}
+
+.transactions-table th {
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.transactions-table td {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.transactions-table td:first-child {
+  color: var(--link-color);
+  font-weight: 500;
+}
+
+.transactions-table tfoot tr td {
+  border-bottom: none;
+}
