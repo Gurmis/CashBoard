@@ -16,7 +16,7 @@ const summaryCardMeta = {
         icon: "lucide:receipt",
         variant: "indigo",
     },
-} as const;
+} as const ;
 
 export const useExpenses = () => {
 const expenseSummary = ref<ExpenseSummary[]>([]);
@@ -46,14 +46,13 @@ const loadData = async () => {
     }
 };
 
-const getTrendVariant = (trend?: string) => {
-    if (!trend) return "neutral";
-    return trend.startsWith("-") ? "negative" : "positive";
+const getTrendVariant = (trend?: string): "positive" | "negative" => {
+    return trend?.startsWith("-") ? "negative" : "positive";
 };
 
 const statCards = computed<StatCardConfig[]>(() => {
     return expenseSummary.value.map((item) => {
-        const meta = summaryCardMeta[item.id];
+        const meta = summaryCardMeta[item.id as keyof typeof summaryCardMeta];
 
         return {
             variant: meta.variant,
