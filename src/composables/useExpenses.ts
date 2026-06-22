@@ -3,6 +3,21 @@ import type { Expense, ExpenseSummary } from "@/features/expenses/types.ts";
 import type { StatCardConfig } from "@/types.ts";
 import { getExpenses, getExpenseSummary } from "@/features/expenses/services/expenseService.ts";
 
+const summaryCardMeta = {
+    "monthly-expenses": {
+        icon: "lucide:wallet",
+        variant: "blue",
+    },
+    "average-expense": {
+        icon: "lucide:chart-line",
+        variant: "purple",
+    },
+    "largest-expense": {
+        icon: "lucide:receipt",
+        variant: "indigo",
+    },
+} as const;
+
 export const useExpenses = () => {
 const expenseSummary = ref<ExpenseSummary[]>([]);
 const expenses = ref<Expense[]>([]);
@@ -31,9 +46,24 @@ const loadData = async () => {
     }
 };
 
+const getTrendVariant = (trend?: string) => {
+    if (!trend) return "neutral";
+    return trend.startsWith("-") ? "negative" : "positive";
+};
+
 const statCards = computed<StatCardConfig[]>(() => {
-    // TODO mapping
-    return [];
+    return expenseSummary.value.map((item) => {
+        const meta = summaryCardMeta[item.id];
+
+        return {
+            variant: meta.variant,
+            label: item.label,
+            value: item.value,
+            trend: item.trend,
+            trendVariant: getTrendVariant(item.trend),
+            icon: meta.icon,
+        }
+    })
 })
 
 return {

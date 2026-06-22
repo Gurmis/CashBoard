@@ -52,41 +52,26 @@ import {Icon} from "@iconify/vue";
 import TextLink from "@/components/ui/TextLink.vue";
 import Button from "@/components/ui/Button.vue";
 import type {StatCardConfig} from "@/types.ts";
-import {ref, type Ref} from "vue";
+import {onMounted, ref, type Ref} from "vue";
+import {useExpenses} from "@/composables/useExpenses.ts";
 
 // const statCards: Ref<StatCardConfig[] | null> = ref(null);
+const {
+  expenses,
+  statCards,
+  isLoading,
+  error,
+  loadData
+} = useExpenses();
+
 const clickHandler = (e: Event) => {
   console.log('click', e);
 }
 
-// temporary until composable+service implemented, just to see the layout properly
-const statCards: StatCardConfig[] = [
-  {
-    variant: "blue",
-    label: "Total Balance",
-    value: "$18,300.00",
-    trend: "-3%",
-    trendVariant: "negative",
-    icon: "lucide:euro"
-  },
-  {
-    variant: "purple",
-    label: "Available Balance",
-    value: "$6,240.00",
-    trend: "-7%",
-    trendVariant: "negative",
-    icon: "lucide:wallet"
-  },
-  {
-    variant: "indigo",
-    label: "Savings",
-    value: "$12,060.00",
-    trend: "10%",
-    trendVariant: "positive",
-    icon: "lucide:piggy-bank"
-  }
-]
 
+onMounted(async () => {
+  await loadData();
+})
 </script>
 
 <style lang="scss" scoped>
