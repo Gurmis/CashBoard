@@ -55,7 +55,10 @@
                 <td>{{expense.description}}</td>
                 <td>{{expense.category}}</td>
                 <td>
-
+                  <Badge
+                      variant="danger"
+                  >Expense
+                  </Badge>
                 </td>
                 <td>{{expense.date}}</td>
                 <td>{{expense.amount}}</td>
@@ -83,6 +86,8 @@ import {Icon} from "@iconify/vue";
 import Button from "@/components/ui/Button.vue";
 import {onMounted} from "vue";
 import {useExpenses} from "@/composables/useExpenses.ts";
+import {getAmountVariant} from "@/utils/helpers.ts";
+import Badge from "@/components/ui/Badge.vue";
 
 const {
   expenses,
