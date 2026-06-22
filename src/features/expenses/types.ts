@@ -7,8 +7,8 @@ export interface Expense {
 }
 
 export interface ExpenseSummary {
-    id: string,
-    label: string,
-    value: string,
-    trend?: string,
+    id: string;
+    label: string;
+    value: string;
+    trend?: string;
 }

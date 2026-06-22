@@ -1,7 +1,7 @@
 import { computed, ref } from "vue";
 import type { Expense, ExpenseSummary } from "@/features/expenses/types.ts";
 import type { StatCardConfig } from "@/types.ts";
-import { getExpenses, getExpenseSummary } from "@/services/expenseService.ts";
+import { getExpenses, getExpenseSummary } from "@/features/expenses/services/expenseService.ts";
 
 export const useExpenses = () => {
 const expenseSummary = ref<ExpenseSummary[]>([]);
